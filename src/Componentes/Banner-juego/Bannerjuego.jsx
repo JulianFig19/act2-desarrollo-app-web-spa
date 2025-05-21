@@ -4,7 +4,7 @@ import "./Bannerjuego.css";
 const Bannerjuego = () => {
   return (
     <div className="banner">
-      <img src="/orig.webp" alt="Mafia" className="banner-bg" />
+      <img src="/doom.jpg" alt="doom" className="banner-bg" />
 
       <div className="banner-overlay">
         <div className="banner-info">
