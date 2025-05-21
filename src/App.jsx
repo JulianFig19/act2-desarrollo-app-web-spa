@@ -7,6 +7,7 @@ import Header from './Componentes/Header/Header'
 import Listado from './Vistas/Listado-videojuegos'
 import Perfil from './Vistas/Perfil'
 import Login from './Vistas/Login'
+import Notfound from './Vistas/404error'
 
 function AppContent(){
 return (
@@ -17,6 +18,7 @@ return (
       <Route path='/listavideojuegos' element={<Listado />} />
       <Route path='/perfil' element={<Perfil />} />
       <Route path='/Login' element={<Login />} />
+      <Route path="*" element={<Notfound />} />
     </Routes>
     <Footer />
   </>
