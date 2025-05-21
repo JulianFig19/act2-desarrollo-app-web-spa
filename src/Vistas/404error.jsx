@@ -8,15 +8,29 @@ function Notfound () {
 
   if (show) {
     return (
-      <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-        <Alert.Heading>¡Página no encontrada!</Alert.Heading>
-        <p>
-          Lo sentimos, la página que estás buscando no existe o ha sido movida.
-        </p>
-      </Alert>
+      <div
+        style={{
+          maxWidth: '500px',
+          margin: '100px auto', // centra vertical y horizontal
+          padding: '1rem',
+          textAlign: 'center'
+        }}
+      >
+        <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+          <Alert.Heading>¡Página no encontrada!</Alert.Heading>
+          <p>
+            Lo sentimos, la página que estás buscando no existe o ha sido movida.
+          </p>
+        </Alert>
+      </div>
     );
   }
-  return <Button onClick={() => setShow(true)}>Show Alert</Button>;
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '100px' }}>
+      <Button onClick={() => setShow(true)}>Mostrar mensaje</Button>
+    </div>
+  );
 }
 
 export default Notfound;
