@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './Componentes/Header/Header'
 import Listado from './Vistas/Listado-videojuegos'
 import Perfil from './Vistas/Perfil'
+import Login from './Vistas/Login'
 
 function AppContent(){
 return (
@@ -15,6 +16,7 @@ return (
       <Route path='/' element={<Landing />} />
       <Route path='/listavideojuegos' element={<Listado />} />
       <Route path='/perfil' element={<Perfil />} />
+      <Route path='/Login' element={<Login />} />
     </Routes>
     <Footer />
   </>

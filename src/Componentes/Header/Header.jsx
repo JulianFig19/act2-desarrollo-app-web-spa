@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar bg="dark" data-bs-theme="dark">
       <Container fluid>
         <Navbar.Brand href="#">Gam32</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -24,13 +24,7 @@ const Header = () => {
             <Nav.Link as={Link} to="/perfil">Perfil</Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Buscar</Button>
+            <Button as={Link} to="/login" variant="outline-success">Iniciar sesión</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
