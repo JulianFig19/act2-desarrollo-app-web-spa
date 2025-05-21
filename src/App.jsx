@@ -1,17 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Landing from './Vistas/Landing'
 import Footer from './Componentes/Footer/Footer'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Header from './Componentes/Header/Header'
+import Listado from './Vistas/Listado-videojuegos'
+import Perfil from './Vistas/Perfil'
+
+function AppContent(){
+return (
+  <>
+    <Header />
+    <Routes>
+      <Route path='/' element={<Landing />} />
+      <Route path='/listavideojuegos' element={<Listado />} />
+      <Route path='/perfil' element={<Perfil />} />
+    </Routes>
+    <Footer />
+  </>
+);
+};
+
 
 const App = () => {
   return (
     <div>
       <main>
-        <Landing />
+        <AppContent />
       </main>
-        <Footer />
     </div>
 
   );

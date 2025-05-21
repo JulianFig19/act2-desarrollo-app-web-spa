@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Componentes/Header/Header";
 import Bannerjuego from "../Componentes/Banner-juego/Bannerjuego";
 import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
 
@@ -24,7 +23,6 @@ const productos = [
 const Landing = () => {
   return (
     <>
-      <Header />
       <Bannerjuego />
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', padding: '1rem' }}>
         {productos.map((item, index) => (
