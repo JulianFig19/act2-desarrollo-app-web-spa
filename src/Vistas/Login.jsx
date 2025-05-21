@@ -7,7 +7,7 @@ const Login = () => {
       <main className="form-signin w-50 m-auto mt-5"> 
         <form> 
           <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1> 
-          <div class="form-floating"> 
+          <div class="form-floating mb-1"> 
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/> <label for="floatingInput">Email address</label> 
           </div> 
           <div class="form-floating"> 
