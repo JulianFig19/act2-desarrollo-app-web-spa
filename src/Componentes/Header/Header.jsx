@@ -24,7 +24,7 @@ const Header = () => {
             <Nav.Link as={Link} to="/perfil">Perfil</Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Button as={Link} to="/login" variant="outline-success">Iniciar sesión</Button>
+            <Button as={Link} to="/login" variant="light">Iniciar sesión</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
