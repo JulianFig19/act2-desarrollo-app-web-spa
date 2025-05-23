@@ -1,8 +1,12 @@
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
+// import { useContext } from 'react';
+import {AuthContext} from '../utils/AuthContext';
 
 const Perfil = () => {
+  // const { user } = useContext(AuthContext);
+  
   const usuario = {
-    nombre: 'David Duran',
+    nombre: 'Usuario',
     correo: 'user123@gmail.com',
     username: 'dd123',
     avatar: '/perfil.png',
@@ -33,7 +37,6 @@ const Perfil = () => {
                   <span key={index} className="badge bg-secondary me-1">{juego}</span>
                 ))}
               </Card.Text>
-              <Button variant="primary">Editar perfil</Button>
             </Card.Body>
           </Card>
         </Col>
