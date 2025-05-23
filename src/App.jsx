@@ -9,7 +9,6 @@ import Login from './Vistas/Login'
 import Notfound from './Vistas/404error'
 import Busqueda from './Vistas/Busqueda'
 import Detallegame from './Vistas/Detallegame'
-import ProtectedRoutes from './utils/ProtectedRoutes'
 import { AuthProvider } from './utils/AuthContext'
 import Suscribirme from './Vistas/Suscribirme'
 import Sucess from './Vistas/Sucess'
@@ -21,11 +20,6 @@ function AppContent(){
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='/listavideojuegos' element={<Listado />} />
-        <Route element={
-          <ProtectedRoutes>
-          
-          </ProtectedRoutes>}>
-        </Route>
         <Route path='/perfil' element={<Perfil />} />
         <Route path='/Detallegame' element={<Detallegame />} />
         <Route path="/Detallegame/:id" element={<Detallegame />} />
