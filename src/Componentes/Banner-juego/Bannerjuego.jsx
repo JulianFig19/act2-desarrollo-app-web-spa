@@ -11,10 +11,10 @@ const Bannerjuego = () => {
 
       <div className="banner-overlay">
         <div className="banner-info">
-          <h5>Conoce nuestros juegos en</h5>
-          <h1>Lanzamiento</h1>
+          <h5>Recorre nuestro catálogo con los mejores títulos del momento.</h5>
+          <h1>¿Listo para jugar?</h1>
           <Button as={Link} to={`/listavideojuegos`} variant="outline-light">
-          Más información
+          Explorar juegos
           </Button>
         </div>
       </div>

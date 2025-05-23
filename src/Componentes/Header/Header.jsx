@@ -41,7 +41,7 @@ const Header = () => {
           <Form className="d-flex" onSubmit={(e) => e.preventDefault()}>
             <Form.Control
               type="search"
-              placeholder="Buscar por ID"
+              placeholder="Buscar juego"
               className="me-2"
               value={input}
               onChange={(e) => setInput(e.target.value)}

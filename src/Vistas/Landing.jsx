@@ -1,6 +1,7 @@
 import React from "react";
 import Bannerjuego from "../Componentes/Banner-juego/Bannerjuego";
 import Tarjeta from "../Componentes/Tarjeta/Tarjeta";
+import Suscripcion from "../Componentes/News/Suscripcion";
 
 const productos = [
   {
@@ -33,6 +34,9 @@ const Landing = () => {
             imagen={item.imagen}
           />
         ))}
+      </div>
+      <div>
+          <Suscripcion />
       </div>
     </>
   );

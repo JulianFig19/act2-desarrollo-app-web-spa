@@ -1,0 +1,6 @@
+.seccion-suscripcion {
+  background: #0f0f0f; /* Fondo negro sólido */
+  min-height: 60vh;
+  padding: 60px 20px;
+  background-image: url('/textura_newsletter.png');
+}
