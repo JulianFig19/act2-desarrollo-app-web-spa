@@ -11,6 +11,8 @@ import Busqueda from './Vistas/Busqueda'
 import Detallegame from './Vistas/Detallegame'
 import ProtectedRoutes from './utils/ProtectedRoutes'
 import { AuthProvider } from './utils/AuthContext'
+import Suscribirme from './Vistas/Suscribirme'
+import Sucess from './Vistas/Sucess'
 
 function AppContent(){
   return (
@@ -29,6 +31,8 @@ function AppContent(){
         <Route path="/Detallegame/:id" element={<Detallegame />} />
         <Route path='/login' element={<Login />} />
         <Route path='/Busqueda' element={<Busqueda />} />
+        <Route path='/Suscribirme' element={<Suscribirme />} />
+        <Route path='/Sucess' element={<Sucess />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer />

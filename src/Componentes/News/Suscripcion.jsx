@@ -1,5 +1,6 @@
 import { Container, Button } from 'react-bootstrap';
 import './Suscripcion.css';
+import { Link } from 'react-router-dom';
 
 const Suscripcion = () => {
   return (
@@ -10,7 +11,13 @@ const Suscripcion = () => {
         <p className="text-light mx-auto" style={{ maxWidth: '600px' }}>
           Suscríbete a nuestro boletín de noticias para obtener información sobre los anuncios y actualizaciones de juegos, detalles sobre eventos especiales, ofertas y mucho más.
         </p>
-        <Button variant="outline-light" size="lg" className="mt-3 px-4 rounded-pill">
+        <Button
+          as={Link}
+          to="/suscribirme"
+          variant="outline-light"
+          size="lg"
+          className="mt-3 px-4 rounded-pill"
+        >
           Suscribirte ya
         </Button>
       </Container>
