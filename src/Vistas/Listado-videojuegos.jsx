@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Listado = () => {
   const [lista, setLista] = useState([]);
   const [filtro, setFiltro] = useState('todos');
+  const [loading, setLoading] = useState(true);
 
   const endpoints = {
     todos: 'https://mock.apidog.com/m1/882435-864045-default/videogames?games=all',
@@ -18,14 +19,19 @@ const Listado = () => {
   useEffect(() => {
     const endpoint = endpoints[filtro];
     console.log('Llamando a:', endpoint);
+    setLoading(true);
 
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
         console.log('Datos recibidos:', data);
         setLista(data);
+        setLoading(false);
       })
-      .catch((err) => console.error('Error al cargar videojuegos:', err));
+      .catch((err) => {
+        console.error('Error al cargar videojuegos:', err);
+        setLoading(false);
+      });
   }, [filtro]);
 
   return (
@@ -46,11 +52,17 @@ const Listado = () => {
       </DropdownButton>
 
       <Row>
-        {lista.map((juego) => (
-          <Col md={6} lg={4} key={juego.id}>
-            <Cardgame juego={juego} />
-          </Col>
-        ))}
+        {loading
+          ? Array.from({ length: 3 }).map((_, i) => (
+              <Col md={6} lg={4} key={i}>
+                <Cardgame loading={true} />
+              </Col>
+            ))
+          : lista.map((juego) => (
+              <Col md={6} lg={4} key={juego.id}>
+                <Cardgame juego={juego} loading={false} />
+              </Col>
+            ))}
       </Row>
     </Container>
   );
