@@ -7,6 +7,8 @@ import Listado from './Vistas/Listado-videojuegos'
 import Perfil from './Vistas/Perfil'
 import Login from './Vistas/Login'
 import Notfound from './Vistas/404error'
+import Busqueda from './Vistas/Busqueda'
+import Detallegame from './Vistas/Detallegame'
 
 function AppContent(){
 return (
@@ -17,6 +19,9 @@ return (
       <Route path='/listavideojuegos' element={<Listado />} />
       <Route path='/perfil' element={<Perfil />} />
       <Route path='/Login' element={<Login />} />
+      <Route path='/Busqueda' element={<Busqueda />} />
+      <Route path='/Detallegame' element={<Detallegame />} />
+      <Route path="/Detallegame/:id" element={<Detallegame />} />
       <Route path="*" element={<Notfound />} />
     </Routes>
     <Footer />

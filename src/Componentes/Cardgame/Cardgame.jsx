@@ -1,4 +1,6 @@
 import { Card, Badge } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Cardgame = ({ juego }) => {
   return (
@@ -16,21 +18,10 @@ const Cardgame = ({ juego }) => {
           ))}
         </div>
 
-        <div>
-        <strong>Rating:</strong>{' '}
-        {juego.rating}{' '}
-        <i className="bi bi-star-fill text-dark"></i>
-        </div>
-
-        <div>
-          <strong>Reserva:</strong>{' '}
-          {juego.isReserve ? (
-            <Badge bg="success">Disponible</Badge>
-          ) : (
-            <Badge bg="danger">No disponible</Badge>
-          )}
-        </div>
       </Card.Body>
+      <Button as={Link} to={`/Detallegame/${juego.id}`} variant="light">
+      Ver
+      </Button>
     </Card>
   );
 };

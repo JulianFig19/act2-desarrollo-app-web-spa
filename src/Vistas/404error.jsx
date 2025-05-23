@@ -11,7 +11,7 @@ function Notfound () {
       <div
         style={{
           maxWidth: '500px',
-          margin: '100px auto', // centra vertical y horizontal
+          margin: '100px auto',
           padding: '1rem',
           textAlign: 'center'
         }}

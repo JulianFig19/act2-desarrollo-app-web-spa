@@ -1,5 +1,8 @@
 import React from "react";
 import "./Bannerjuego.css";
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
 
 const Bannerjuego = () => {
   return (
@@ -8,14 +11,11 @@ const Bannerjuego = () => {
 
       <div className="banner-overlay">
         <div className="banner-info">
-          <h4>Conoce nuestros juegos</h4>
-          <h1>Lanzamientos</h1>
-          <button className="info-btn">MÁS INFORMACIÓN</button>
-          <div className="dots">
-            <span className="dot active" />
-            <span className="dot" />
-            <span className="dot" />
-          </div>
+          <h5>Conoce nuestros juegos en</h5>
+          <h1>Lanzamiento</h1>
+          <Button as={Link} to={`/listavideojuegos`} variant="outline-light">
+          Más información
+          </Button>
         </div>
       </div>
     </div>
