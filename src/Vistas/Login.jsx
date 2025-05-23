@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import useLogin from '../hooks/useLogin';
 import { AuthContext } from '../utils/AuthContext';
 import { useContext } from "react";
+import '../App.css';
 
 
 const Login = () => {
@@ -53,10 +54,16 @@ const Login = () => {
   // }
 
   return (
-    <div className="w-100 d-flex text-center m-auto">
+    <div className="w-50 d-flex text-center m-auto">
       <main className="form-signin w-50 m-auto mt-5"> 
-        <form onSubmit={handleSubmit}> 
-          <h1 className="h3 mb-3 fw-normal">Iniciar Sesión</h1> 
+        <form onSubmit={handleSubmit}>
+          <img
+            src="/Logo_GAM32_negro.png"
+            alt="Gam32"
+            className="logo-inicio mx-auto d-block"
+            height="30"
+          />
+          <h1 className="h5 mb-5 fw-normal mt-5">Iniciar Sesión</h1> 
           <div className="form-floating mb-1"> 
             <input type="text" 
               name="username" 
@@ -84,8 +91,12 @@ const Login = () => {
               <label htmlFor="floatingPassword">Contraseña</label> 
           </div> 
           {error && <p className="login_error"> {error}</p>}
-          <button className="btn btn-primary w-100 py-2" type="submit">Sign in</button> 
-          <p className="mt-5 mb-3 text-body-secondary">© 2025</p> 
+          <button className="btn btn-primary w-100 py-2 mt-1" type="submit">Sign in</button> 
+          <div className="text-center mx-auto m-5" style={{ maxWidth: '500px' }}>
+          <p className="text-body-secondary">
+            Al continuar, aceptas los <strong>Términos</strong> y las condiciones de uso de Gam32. Consulta nuestra <strong>Política de privacidad</strong>.
+          </p>
+          </div> 
         </form> 
       </main>
     </div>

@@ -1,0 +1,12 @@
+.logo-inicio {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: entradaGam32 1s ease-out forwards;
+}
+
+@keyframes entradaGam32 {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
