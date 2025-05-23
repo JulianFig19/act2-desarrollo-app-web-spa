@@ -9,24 +9,31 @@ import Login from './Vistas/Login'
 import Notfound from './Vistas/404error'
 import Busqueda from './Vistas/Busqueda'
 import Detallegame from './Vistas/Detallegame'
+import ProtectedRoutes from './utils/ProtectedRoutes'
+import { AuthProvider } from './utils/AuthContext'
 
 function AppContent(){
-return (
-  <>
-    <Header />
-    <Routes>
-      <Route path='/' element={<Landing />} />
-      <Route path='/listavideojuegos' element={<Listado />} />
-      <Route path='/perfil' element={<Perfil />} />
-      <Route path='/Login' element={<Login />} />
-      <Route path='/Busqueda' element={<Busqueda />} />
-      <Route path='/Detallegame' element={<Detallegame />} />
-      <Route path="/Detallegame/:id" element={<Detallegame />} />
-      <Route path="*" element={<Notfound />} />
-    </Routes>
-    <Footer />
-  </>
-);
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Landing />} />
+        <Route path='/listavideojuegos' element={<Listado />} />
+        <Route element={
+          <ProtectedRoutes>
+          
+          </ProtectedRoutes>}>
+        </Route>
+        <Route path='/perfil' element={<Perfil />} />
+        <Route path='/Detallegame' element={<Detallegame />} />
+        <Route path="/Detallegame/:id" element={<Detallegame />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/Busqueda' element={<Busqueda />} />
+        <Route path="*" element={<Notfound />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 };
 
 
@@ -34,7 +41,9 @@ const App = () => {
   return (
     <div>
       <main>
-        <AppContent />
+        <AuthProvider>
+          <AppContent />
+        </AuthProvider>
       </main>
     </div>
 

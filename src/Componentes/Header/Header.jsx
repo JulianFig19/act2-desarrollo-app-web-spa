@@ -6,12 +6,14 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../utils/AuthContext';
 
 const Header = () => {
   const [input, setInput] = useState('');
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext)
 
   const handleSearch = () => {
     if (input.trim()) {
@@ -50,11 +52,15 @@ const Header = () => {
               <i className="bi bi-search text-white me-1"></i>
             </Button>
           </Form>
-
-          <Form className="d-flex ms-3" >
-            <Button as={Link} to="/login" variant="light">Iniciar sesión</Button>
-          </Form>
-          <Nav.Link as={Link} to="/perfil" style={{ paddingRight: '64px' }}><i className="bi bi-person-circle text-white me-1"></i>Perfil</Nav.Link>
+            { 
+              user ? (
+                <Nav.Link as={Link} to="/perfil" style={{ paddingRight: '64px' }}><i className="bi bi-person-circle text-white me-1"></i>Perfil</Nav.Link>
+              ) : (
+                <Form className="d-flex ms-3" >
+                  <Button as={Link} to="/login" variant="light">Iniciar sesión</Button>
+                </Form>
+              )
+            }
         </Navbar.Collapse>
       </Container>
     </Navbar>
