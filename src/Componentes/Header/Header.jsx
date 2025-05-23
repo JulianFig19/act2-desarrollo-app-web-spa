@@ -28,6 +28,7 @@ const Header = () => {
             alt="Gam32"
             height="30"
             className="d-inline-block align-top"
+            style={{ paddingLeft: '64px' }}
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -35,7 +36,6 @@ const Header = () => {
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/listavideojuegos">Videojuegos</Nav.Link>
-            <Nav.Link as={Link} to="/perfil">Perfil</Nav.Link>
           </Nav>
 
           <Form className="d-flex" onSubmit={(e) => e.preventDefault()}>
@@ -51,9 +51,10 @@ const Header = () => {
             </Button>
           </Form>
 
-          <Form className="d-flex ms-3">
+          <Form className="d-flex ms-3" >
             <Button as={Link} to="/login" variant="light">Iniciar sesión</Button>
           </Form>
+          <Nav.Link as={Link} to="/perfil" style={{ paddingRight: '64px' }}><i className="bi bi-person-circle text-white me-1"></i>Perfil</Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
